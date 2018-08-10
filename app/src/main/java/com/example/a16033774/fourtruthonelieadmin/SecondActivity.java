@@ -91,11 +91,8 @@ public class SecondActivity extends AppCompatActivity {
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                //check for duration and set the timer
-//                Intent intent = getIntent();
-//                String dataDuration = intent.getStringExtra("duration");
-//                long time = Long.parseLong(dataDuration);
 
+                //count down interval is 1 sec
                 countDownTimer = new CountDownTimer(timeLeftInMills, 1000) {
                     @Override
                     public void onTick(long millisUntilFinish) {
@@ -121,6 +118,7 @@ public class SecondActivity extends AppCompatActivity {
 
                 tv_timer.setText(timeFormatted);
 
+                //timer color become RED when timer left 1min
                 if (timeLeftInMills < 60000) {
                     tv_timer.setTextColor(Color.RED);
                 } else {
@@ -149,6 +147,7 @@ public class SecondActivity extends AppCompatActivity {
         } else if (dataRounds.equals("4")) {
             btn_round5.setEnabled(false);
         }
+
 
         btn_round1.setOnClickListener(new View.OnClickListener() {
             @Override

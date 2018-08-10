@@ -60,15 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
                 request.setOnHttpResponseListener(mHttpResponseListener);
                 request.setMethod("GET");
-//                request.addData("gameKey", etKey.getText().toString());
-//                request.addData("duration", spinnerDuration.getSelectedItem().toString());
-//                request.addData("number_of_round", spinnerRounds.getSelectedItem().toString());
 
 
 
                 request.execute();
-                // Code for step 1 end
 
+                //retrieving intent
                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                intent.putExtra("rounds", spinnerRounds.getSelectedItem().toString());
                intent.putExtra("duration", spinnerDuration.getSelectedItem().toString());
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Code for step 2 start
+    //HttpRequest code
     private HttpRequest.OnHttpResponseListener mHttpResponseListener =
             new HttpRequest.OnHttpResponseListener() {
                 @Override
